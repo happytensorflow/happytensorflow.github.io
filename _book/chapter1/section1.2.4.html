@@ -1,0 +1,390 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.4 反向传播 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="section1.2.5.html" />
+    
+    
+    <link rel="prev" href="section1.2.3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="section1.1.html">
+            
+                <a href="section1.1.html">
+            
+                    
+                    第一节 基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="section1.2.html">
+            
+                <a href="section1.2.html">
+            
+                    
+                    第二节 神经网络的搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="section1.2.1.html">
+            
+                <a href="section1.2.1.html">
+            
+                    
+                    2.1 神经网络的参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="section1.2.2.html">
+            
+                <a href="section1.2.2.html">
+            
+                    
+                    2.2 神经网络的搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="section1.2.3.html">
+            
+                <a href="section1.2.3.html">
+            
+                    
+                    2.3 前向传播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.4" data-path="section1.2.4.html">
+            
+                <a href="section1.2.4.html">
+            
+                    
+                    2.4 反向传播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="section1.2.5.html">
+            
+                <a href="section1.2.5.html">
+            
+                    
+                    2.5 搭建神经网络的步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.4 反向传播</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="24-&#x53CD;&#x5411;&#x4F20;&#x64AD;">2.4 &#x53CD;&#x5411;&#x4F20;&#x64AD;</h1>
+<ul>
+<li><p>&#x53CD;&#x5411;&#x4F20;&#x64AD;: &#x8BAD;&#x7EC3;&#x6A21;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x6240;&#x6709;&#x53C2;&#x6570;&#x4E0A;&#x7528;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#xFF0C;&#x4F7F;<code>NN</code>&#x6A21;&#x578B;&#x5728;&#x8BAD;&#x7EC3;&#x6570;&#x636E;&#x4E0A;&#x7684;&#x635F;&#x5931;&#x51FD;&#x6570;&#x6700;&#x5C0F;&#x3002;</p>
+</li>
+<li><p>&#x635F;&#x5931;&#x51FD;&#x6570;<code>loss</code>: &#x8BA1;&#x7B97;&#x5F97;&#x5230;&#x7684;&#x9884;&#x6D4B;&#x503C;<code>y</code> &#x4E0E;&#x5DF2;&#x77E5;&#x7B54;&#x6848;<code>y_</code>&#x7684;&#x5DEE;&#x8DDD;&#x3002;</p>
+</li>
+</ul>
+<p>&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x8BA1;&#x7B97;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x6CD5;&#xFF0C;&#x5747;&#x65B9;&#x8BEF;&#x5DEE;<code>MSE</code> &#x662F;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#x3002;</p>
+<ul>
+<li>&#x5747;&#x65B9;&#x8BEF;&#x5DEE;<code>MSE</code>: &#x6C42;&#x524D;&#x5411;&#x4F20;&#x64AD;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4E0E;&#x5DF2;&#x77E5;&#x7B54;&#x6848;&#x4E4B;&#x5DEE;&#x7684;&#x5E73;&#x65B9;&#x518D;&#x6C42;&#x5E73;&#x5747;&#x3002;</li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>S</mi><mi>E</mi><mo>(</mo><mi>y</mi><mi mathvariant="normal">_</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msubsup><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo>(</mo><mi>y</mi><mo>&#x2212;</mo><mi>y</mi><mi mathvariant="normal">_</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><mrow><mi>n</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">MSE(y\_,y)=\frac{\sum_{i=1}^n(y-y\_)^2}{n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.158627em;"></span><span class="strut bottom" style="height:1.503627em;vertical-align:-0.345em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.10903em;">M</span><span class="mord mathit" style="margin-right:0.05764em;">S</span><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mord mathrm" style="margin-right:0.02778em;">_</span><span class="mpunct">,</span><span class="mord mathit" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mrel">=</span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.534707em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mop mtight"><span class="mop op-symbol small-op mtight" style="top:0.074995em;">&#x2211;</span><span class="msupsub"><span class="vlist"><span style="top:0.32101em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord scriptscriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mrel mtight">=</span><span class="mord mathrm mtight">1</span></span></span></span><span style="top:-0.43100000000000005em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mopen mtight">(</span><span class="mord mathit mtight" style="margin-right:0.03588em;">y</span><span class="mbin mtight">&#x2212;</span><span class="mord mathit mtight" style="margin-right:0.03588em;">y</span><span class="mord mathrm mtight" style="margin-right:0.02778em;">_</span><span class="mclose mtight"><span class="mclose mtight">)</span><span class="msupsub"><span class="vlist"><span style="top:-0.431em;margin-right:0.07142857142857144em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle uncramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></p>
+<p>&#x7528;tensorflow&#x51FD;&#x6570;&#x8868;&#x793A;&#x4E3A;:</p>
+<pre><code class="lang-python">loss_mse = tf.reduce_mean(tf.square(y_-y))
+</code></pre>
+<ul>
+<li>&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x8BAD;&#x7EC3;&#x65B9;&#x6CD5;:&#x4EE5;&#x51CF;&#x5C0F;<code>loss</code>&#x503C;&#x4E3A;&#x4F18;&#x5316;&#x76EE;&#x6807;&#xFF0C;&#x6709;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x3001;<code>momentum</code>&#x4F18;&#x5316; &#x5668;&#x3001;<code>adam</code>&#x4F18;&#x5316;&#x5668;&#x7B49;&#x4F18;&#x5316;&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x4E09;&#x79CD;&#x4F18;&#x5316;&#x65B9;&#x6CD5;&#x7528;tensorflow&#x7684;&#x51FD;&#x6570;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A;:</p>
+<pre><code class="lang-python">train_step=tf.train.GradientDescentOptimizer(learning_rate).minimize(loss) 
+train_step=tf.train.MomentumOptimizer(learning_rate, momentum).minimize(loss)
+train_step=tf.train.AdamOptimizer(learning_rate).minimize(loss)
+</code></pre>
+<p>&#x8FD9;&#x4E09;&#x79CD;&#x4F18;&#x5316;&#x53D1;&#x653E;&#x533A;&#x522B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>(1)<code>tf.train.GradientDescentOptimizer()</code>&#x4F7F;&#x7528;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#xFF0C;&#x4F7F;&#x53C2;&#x6570;&#x6CBF;&#x7740; &#x68AF;&#x5EA6;&#x7684;&#x53CD;&#x65B9;&#x5411;&#xFF0C;&#x5373;&#x603B;&#x635F;&#x5931;&#x51CF;&#x5C0F;&#x7684;&#x65B9;&#x5411;&#x79FB;&#x52A8;&#xFF0C;&#x5B9E;&#x73B0;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x3002;</p>
+<p><img src="http://ovhbzkbox.bkt.clouddn.com/2018-08-07-15335987490795.jpg" width="250"></p>
+<p>&#x53C2;&#x6570;&#x66F4;&#x65B0;&#x516C;&#x5F0F;&#x662F;&#xFF1A;</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>&#x3B8;</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>&#x3B8;</mi><mi>n</mi></msub><mo>&#x2212;</mo><mi>&#x3B1;</mi><mfrac><mrow><mi mathvariant="normal">&#x2202;</mi><mrow><mi>J</mi><mo>(</mo><msub><mi>&#x3B8;</mi><mi>n</mi></msub><mo>)</mo></mrow></mrow><mrow><mi mathvariant="normal">&#x2202;</mi><msub><mi>&#x3B8;</mi><mi>n</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\theta_{n+1}=\theta_n-\alpha\frac{\partial{J(\theta_n)}}{\partial\theta_n}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.01em;"></span><span class="strut bottom" style="height:1.4550999999999998em;vertical-align:-0.44509999999999994em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">n</span><span class="mbin mtight">+</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mord reset-textstyle textstyle uncramped"><span class="mopen sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span><span class="mfrac"><span class="vlist"><span style="top:0.345em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathrm mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span><span style="top:-0.22999999999999998em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle textstyle uncramped frac-line"></span></span><span style="top:-0.485em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle uncramped mtight"><span class="mord scriptstyle uncramped mtight"><span class="mord mathrm mtight" style="margin-right:0.05556em;">&#x2202;</span><span class="mord scriptstyle uncramped mtight"><span class="mord mathit mtight" style="margin-right:0.09618em;">J</span><span class="mopen mtight">(</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.143em;margin-right:0.07142857142857144em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-scriptstyle scriptscriptstyle cramped mtight"><span class="mord mathit mtight">n</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose mtight">)</span></span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span><span class="mclose sizing reset-size5 size5 reset-textstyle textstyle uncramped nulldelimiter"></span></span></span></span></span></p>
+<p>&#x5176;&#x4E2D;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>(</mo><mi>&#x3B8;</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">J(\theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.09618em;">J</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose">)</span></span></span></span>&#x4E3A;&#x635F;&#x5931;&#x51FD;&#x6570;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B8;</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span></span></span></span>&#x4E3A;&#x53C2;&#x6570;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span></span></span></span>&#x4E3A;&#x5B66;&#x4E60;&#x7387;&#x3002;</p>
+<p>(2) <code>tf.train.MomentumOptimizer()</code>&#x5728;&#x66F4;&#x65B0;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x5229;&#x7528;&#x4E86;&#x8D85;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x66F4;&#x65B0;&#x516C;&#x5F0F;
+&#x662F;</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>=</mo><mi>&#x3B2;</mi><mrow><msub><mi>d</mi><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub></mrow><mo>+</mo><mi>g</mi><mo>(</mo><msub><mi>&#x3B8;</mi><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">d_i=\beta{d_{i-1}}+g(\theta_{i-1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit">d</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span><span class="mord textstyle uncramped"><span class="mord"><span class="mord mathit">d</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mbin mtight">&#x2212;</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span><span class="mbin">+</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mbin mtight">&#x2212;</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>&#x3B8;</mi><mi>i</mi></msub><mo>=</mo><msub><mi>&#x3B8;</mi><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>&#x2212;</mo><mi>&#x3B1;</mi><mrow><msub><mi>d</mi><mi>i</mi></msub></mrow></mrow><annotation encoding="application/x-tex">\theta_i=\theta_{i-1}-\alpha{d_i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.902771em;vertical-align:-0.208331em;"></span><span class="base textstyle uncramped"><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mrel">=</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mbin mtight">&#x2212;</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mbin">&#x2212;</span><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span><span class="mord textstyle uncramped"><span class="mord"><span class="mord mathit">d</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathit mtight">i</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span></span></span></span></span></p>
+<p>&#x5176;&#x4E2D;&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B1;</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.0037em;">&#x3B1;</span></span></span></span>&#x4E3A;&#x5B66;&#x4E60;&#x7387;&#xFF0C;&#x8D85;&#x53C2;&#x6570;&#x4E3A;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B2;</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.05278em;">&#x3B2;</span></span></span></span>&#xFF0C;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><msub><mi>&#x3B8;</mi><mrow><mi>i</mi><mo>&#x2212;</mo><mn>1</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\theta_{i-1})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist"><span style="top:0.15em;margin-right:0.05em;margin-left:-0.02778em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord scriptstyle cramped mtight"><span class="mord mathit mtight">i</span><span class="mbin mtight">&#x2212;</span><span class="mord mathrm mtight">1</span></span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">&#x200B;</span></span>&#x200B;</span></span></span></span><span class="mclose">)</span></span></span></span>&#x4E3A;&#x635F;&#x5931;&#x51FD;&#x6570;&#x7684;&#x68AF;&#x5EA6;&#x3002;</p>
+<p>(3) <code>tf.train.AdamOptimizer()</code>&#x662F;&#x5229;&#x7528;&#x81EA;&#x9002;&#x5E94;&#x5B66;&#x4E60;&#x7387;&#x7684;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#xFF0C;<code>Adam</code>&#x7B97;&#x6CD5;&#x548C;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#x4E0D;&#x540C;&#x3002;&#x968F;&#x673A;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#x4FDD;&#x6301;&#x5355;&#x4E00;&#x7684;&#x5B66;&#x4E60;&#x7387;&#x66F4;&#x65B0;&#x6240;&#x6709;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5B66;&#x4E60;&#x7387;&#x5728;&#x8BAD;&#x7EC3;&#x8FC7;&#x7A0B;&#x4E2D;&#x5E76;&#x4E0D;&#x4F1A;&#x6539;&#x53D8;&#x3002;&#x800C;<code>Adam</code>&#x7B97;&#x6CD5;&#x901A;&#x8FC7;&#x8BA1;&#x7B97;&#x68AF;&#x5EA6;&#x7684;&#x4E00;&#x9636;&#x77E9;&#x4F30;&#x8BA1;&#x548C;&#x4E8C;&#x9636;&#x77E9;&#x4F30;&#x8BA1;&#x800C;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x8BBE;&#x8BA1;&#x72EC;&#x7ACB;&#x7684;&#x81EA;&#x9002;&#x5E94;&#x6027;&#x5B66;&#x4E60;&#x7387;&#x3002;</p>
+<ul>
+<li>&#x5B66;&#x4E60;&#x7387;:&#x51B3;&#x5B9A;&#x6BCF;&#x6B21;&#x53C2;&#x6570;&#x66F4;&#x65B0;&#x7684;&#x5E45;&#x5EA6;&#x3002;</li>
+</ul>
+<p>&#x4F18;&#x5316;&#x5668;&#x4E2D;&#x90FD;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x53EB;&#x505A;&#x5B66;&#x4E60;&#x7387;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x5B66;&#x4E60;&#x7387;&#x9009;&#x62E9;&#x8FC7;&#x5927;&#x4F1A;&#x51FA;&#x73B0;&#x9707;&#x8361;&#x4E0D;&#x6536;&#x655B;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982;&#x679C;&#x5B66;&#x4E60;&#x7387;&#x9009;&#x62E9;&#x8FC7;&#x5C0F;&#xFF0C;&#x4F1A;&#x51FA;&#x73B0;&#x6536;&#x655B;&#x901F;&#x5EA6;&#x6162;&#x7684;&#x60C5;&#x51B5;&#x3002;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x9009;&#x4E2A;&#x6BD4;&#x8F83;&#x5C0F;&#x7684;&#x503C;&#x586B;&#x5165;&#xFF0C;&#x6BD4;&#x5982;0.01&#x3001;0.001&#x3002;</p>
+<p><img src="http://ovhbzkbox.bkt.clouddn.com/2018-07-26-sgd.gif" alt="sgd">
+<img src="http://ovhbzkbox.bkt.clouddn.com/2018-07-26-sgd_bad.gif" alt="sgd_bad"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="section1.2.3.html" class="navigation navigation-prev " aria-label="Previous page: 2.3 前向传播">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="section1.2.5.html" class="navigation navigation-next " aria-label="Next page: 2.5 搭建神经网络的步骤">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.4 反向传播","level":"1.2.2.4","depth":3,"next":{"title":"2.5 搭建神经网络的步骤","level":"1.2.2.5","depth":3,"path":"chapter1/section1.2.5.md","ref":"chapter1/section1.2.5.md","articles":[]},"previous":{"title":"2.3 前向传播","level":"1.2.2.3","depth":3,"path":"chapter1/section1.2.3.md","ref":"chapter1/section1.2.3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.2.4.md","mtime":"2018-08-09T06:04:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-09T06:04:35.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

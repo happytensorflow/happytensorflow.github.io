@@ -1,0 +1,424 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.1 神经网络的参数 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="section1.2.2.html" />
+    
+    
+    <link rel="prev" href="section1.2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="section1.1.html">
+            
+                <a href="section1.1.html">
+            
+                    
+                    第一节 基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="section1.2.html">
+            
+                <a href="section1.2.html">
+            
+                    
+                    第二节 神经网络的搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.2.1" data-path="section1.2.1.html">
+            
+                <a href="section1.2.1.html">
+            
+                    
+                    2.1 神经网络的参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="section1.2.2.html">
+            
+                <a href="section1.2.2.html">
+            
+                    
+                    2.2 神经网络的搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="section1.2.3.html">
+            
+                <a href="section1.2.3.html">
+            
+                    
+                    2.3 前向传播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="section1.2.4.html">
+            
+                <a href="section1.2.4.html">
+            
+                    
+                    2.4 反向传播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.5" data-path="section1.2.5.html">
+            
+                <a href="section1.2.5.html">
+            
+                    
+                    2.5 搭建神经网络的步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.1 神经网络的参数</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="21-&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x53C2;&#x6570;">2.1 &#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x53C2;&#x6570;</h1>
+<ul>
+<li>&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;<strong>&#x53C2;&#x6570;</strong>: &#x662F;&#x6307;&#x795E;&#x7ECF;&#x5143;&#x7EBF;&#x4E0A;&#x7684;&#x6743;&#x91CD;<code>w</code>&#xFF0C;&#x7528;&#x53D8;&#x91CF;&#x8868;&#x793A;&#xFF0C;&#x4E00;&#x822C;&#x4F1A;&#x5148;&#x968F;&#x673A;&#x751F;&#x6210;&#x8FD9;&#x4E9B;&#x53C2;&#x6570;&#x3002;&#x751F;&#x6210;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x8BA9;<code>w</code>&#x7B49;&#x4E8E;<code>tf.Variable</code>&#xFF0C;&#x628A;&#x751F;&#x6210;&#x7684;&#x65B9;&#x5F0F;&#x5199;&#x5728;&#x62EC;&#x53F7;&#x91CC;&#x3002;</li>
+</ul>
+<p>&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;/&#x6570;&#x7EC4;&#x7684;&#x51FD;&#x6570;&#x6709;:</p>
+<table>
+<thead>
+<tr>
+<th>&#x51FD;&#x6570;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tf.random_normal()</code></td>
+<td>&#x751F;&#x6210;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x968F;&#x673A;&#x6570;</td>
+</tr>
+<tr>
+<td><code>tf.truncated_normal()</code></td>
+<td>&#x751F;&#x6210;&#x53BB;&#x6389;&#x8FC7;&#x5927;&#x504F;&#x79BB;&#x70B9;&#x7684;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x968F;&#x673A;&#x6570;</td>
+</tr>
+<tr>
+<td><code>tf.random_uniform()</code></td>
+<td>&#x751F;&#x6210;&#x5747;&#x5300;&#x5206;&#x5E03;&#x968F;&#x673A;&#x6570;</td>
+</tr>
+<tr>
+<td><code>tf.zeros</code></td>
+<td>&#x8868;&#x793A;&#x751F;&#x6210;&#x5168; 0 &#x6570;&#x7EC4;</td>
+</tr>
+<tr>
+<td><code>tf.ones</code></td>
+<td>&#x8868;&#x793A;&#x751F;&#x6210;&#x5168; 1 &#x6570;&#x7EC4;</td>
+</tr>
+<tr>
+<td><code>tf.fill</code></td>
+<td>&#x8868;&#x793A;&#x751F;&#x6210;&#x5168;&#x5B9A;&#x503C;&#x6570;&#x7EC4;</td>
+</tr>
+<tr>
+<td><code>tf.constant</code></td>
+<td>&#x8868;&#x793A;&#x751F;&#x6210;&#x76F4;&#x63A5;&#x7ED9;&#x5B9A;&#x503C;&#x7684;&#x6570;&#x7EC4;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E3E;&#x4F8B;</p>
+<p>(1)&#x751F;&#x6210;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x5F62;&#x72B6;&#x4E24;&#x884C;&#x4E09;&#x5217;&#xFF0C;&#x6807;&#x51C6;&#x5DEE;&#x662F;2&#xFF0C;&#x5747;&#x503C;&#x662F;0&#xFF0C;&#x968F;&#x673A;&#x79CD;&#x5B50;&#x662F;1&#x3002;</p>
+<pre><code class="lang-python">w=tf.Variable(tf.random_normal([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],stddev=<span class="hljs-number">2</span>, mean=<span class="hljs-number">0</span>, seed=<span class="hljs-number">1</span>))
+</code></pre>
+<p>(2)&#x53BB;&#x6389;&#x504F;&#x79BB;&#x8FC7;&#x5927;&#x7684;&#x6B63;&#x6001;&#x5206;&#x5E03;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5982;&#x679C;&#x968F;&#x673A;&#x51FA;&#x6765;&#x7684;&#x6570;&#x636E;&#x504F;&#x79BB;&#x5E73;&#x5747;&#x503C;&#x8D85;&#x8FC7;&#x4E24;&#x4E2A; &#x6807;&#x51C6;&#x5DEE;&#xFF0C;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x5C06;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x3002;</p>
+<pre><code class="lang-python">w=tf.Variable(tf.Truncated_normal([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>],stddev=<span class="hljs-number">2</span>, mean=<span class="hljs-number">0</span>, seed=<span class="hljs-number">1</span>))
+</code></pre>
+<p>(3)&#x4ECE;&#x4E00;&#x4E2A;&#x5747;&#x5300;&#x5206;&#x5E03;<code>[minval maxval)</code>&#x4E2D;&#x968F;&#x673A;&#x91C7;&#x6837;&#xFF0C;&#x6CE8;&#x610F;&#x5B9A;&#x4E49;&#x57DF;&#x662F;&#x5DE6;&#x95ED;&#x53F3;&#x5F00;&#xFF0C;&#x5373;&#x5305;&#x542B;<code>minval</code>&#xFF0C;&#x4E0D;&#x5305;&#x542B;<code>maxval</code>&#x3002;</p>
+<pre><code class="lang-python">w=random_uniform(shape=<span class="hljs-number">7</span>,minval=<span class="hljs-number">0</span>,maxval=<span class="hljs-number">1</span>,dtype=tf.int32&#xFF0C;seed=<span class="hljs-number">1</span>)
+</code></pre>
+<p>(4)&#x9664;&#x4E86;&#x751F;&#x6210;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x751F;&#x6210;&#x5E38;&#x91CF;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x751F;&#x6210;[[0,0],[0,0],[0,0]]</span>
+tf.zeros([<span class="hljs-number">3</span>,<span class="hljs-number">2</span>],int32) 
+
+<span class="hljs-comment">#&#x751F;&#x6210;[[1,1],[1,1],[1,1]</span>
+tf.ones([<span class="hljs-number">3</span>,<span class="hljs-number">2</span>],int32)
+
+<span class="hljs-comment"># &#x751F;&#x6210;[[6,6],[6,6],[6,6]]</span>
+tf.fill([<span class="hljs-number">3</span>,<span class="hljs-number">2</span>],<span class="hljs-number">6</span>)
+
+<span class="hljs-comment">#&#x751F;&#x6210;[3,2,1]</span>
+tf.constant([<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>])
+</code></pre>
+<blockquote>
+<p>&#x6CE8;&#xFF1A;</p>
+<ol>
+<li><p>&#x968F;&#x673A;&#x79CD;&#x5B50;&#x5982;&#x679C;&#x53BB;&#x6389;&#x6BCF;&#x6B21;&#x751F;&#x6210;&#x7684;&#x968F;&#x673A;&#x6570;&#x5C06;&#x4E0D;&#x4E00;&#x81F4;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x6CA1;&#x6709;&#x7279;&#x6B8A;&#x8981;&#x6C42;&#x6807;&#x51C6;&#x5DEE;&#x3001;&#x5747;&#x503C;&#x3001;&#x968F;&#x673A;&#x79CD;&#x5B50;&#x662F;&#x53EF;&#x4EE5;&#x4E0D;&#x5199;&#x7684;&#x3002;</p>
+</li>
+</ol>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="section1.2.html" class="navigation navigation-prev " aria-label="Previous page: 第二节 神经网络的搭建">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="section1.2.2.html" class="navigation navigation-next " aria-label="Next page: 2.2 神经网络的搭建">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.1 神经网络的参数","level":"1.2.2.1","depth":3,"next":{"title":"2.2 神经网络的搭建","level":"1.2.2.2","depth":3,"path":"chapter1/section1.2.2.md","ref":"chapter1/section1.2.2.md","articles":[]},"previous":{"title":"第二节 神经网络的搭建","level":"1.2.2","depth":2,"path":"chapter1/section1.2.md","ref":"chapter1/section1.2.md","articles":[{"title":"2.1 神经网络的参数","level":"1.2.2.1","depth":3,"path":"chapter1/section1.2.1.md","ref":"chapter1/section1.2.1.md","articles":[]},{"title":"2.2 神经网络的搭建","level":"1.2.2.2","depth":3,"path":"chapter1/section1.2.2.md","ref":"chapter1/section1.2.2.md","articles":[]},{"title":"2.3 前向传播","level":"1.2.2.3","depth":3,"path":"chapter1/section1.2.3.md","ref":"chapter1/section1.2.3.md","articles":[]},{"title":"2.4 反向传播","level":"1.2.2.4","depth":3,"path":"chapter1/section1.2.4.md","ref":"chapter1/section1.2.4.md","articles":[]},{"title":"2.5 搭建神经网络的步骤","level":"1.2.2.5","depth":3,"path":"chapter1/section1.2.5.md","ref":"chapter1/section1.2.5.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.2.1.md","mtime":"2018-08-09T06:04:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-09T06:04:35.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

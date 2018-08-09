@@ -1,0 +1,453 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.5 搭建神经网络的步骤 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="section1.2.4.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    第一章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="section1.1.html">
+            
+                <a href="section1.1.html">
+            
+                    
+                    第一节 基本概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="section1.2.html">
+            
+                <a href="section1.2.html">
+            
+                    
+                    第二节 神经网络的搭建
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="section1.2.1.html">
+            
+                <a href="section1.2.1.html">
+            
+                    
+                    2.1 神经网络的参数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="section1.2.2.html">
+            
+                <a href="section1.2.2.html">
+            
+                    
+                    2.2 神经网络的搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="section1.2.3.html">
+            
+                <a href="section1.2.3.html">
+            
+                    
+                    2.3 前向传播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="section1.2.4.html">
+            
+                <a href="section1.2.4.html">
+            
+                    
+                    2.4 反向传播
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.5" data-path="section1.2.5.html">
+            
+                <a href="section1.2.5.html">
+            
+                    
+                    2.5 搭建神经网络的步骤
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.5 搭建神经网络的步骤</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="25-&#x642D;&#x5EFA;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x6B65;&#x9AA4;">2.5 &#x642D;&#x5EFA;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x6B65;&#x9AA4;</h1>
+<p>&#x6211;&#x4EEC;&#x6700;&#x540E;&#x68B3;&#x7406;&#x51FA;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x642D;&#x5EFA;&#x7684;&#x516B;&#x80A1;&#xFF0C;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x642D;&#x5EFA;&#x8BFE;&#x5206;&#x56DB;&#x6B65;&#x5B8C;&#x6210;:&#x51C6;&#x5907;&#x5DE5;&#x4F5C;&#x3001; &#x524D;&#x5411;&#x4F20;&#x64AD;&#x3001;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x548C;&#x5FAA;&#x73AF;&#x8FED;&#x4EE3;&#x3002;</p>
+<ul>
+<li>&#x5BFC;&#x5165;&#x6A21;&#x5757;&#xFF0C;&#x751F;&#x6210;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x96C6;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> 
+&#x5E38;&#x91CF;&#x5B9A;&#x4E49; 
+&#x751F;&#x6210;&#x6570;&#x636E;&#x96C6;
+</code></pre>
+<ul>
+<li>&#x524D;&#x5411;&#x4F20;&#x64AD;: &#x5B9A;&#x4E49;&#x8F93;&#x5165;&#x3001;&#x53C2;&#x6570;&#x548C;&#x8F93;&#x51FA;</li>
+</ul>
+<pre><code>x=   y_=
+w1=  w2=
+a=   y=
+</code></pre><ul>
+<li>&#x53CD;&#x5411;&#x4F20;&#x64AD;: &#x5B9A;&#x4E49;&#x635F;&#x5931;&#x51FD;&#x6570;&#x3001;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code>loss=
+train_step=
+</code></pre><ul>
+<li>&#x751F;&#x6210;&#x4F1A;&#x8BDD;&#xFF0C;&#x8BAD;&#x7EC3;<code>STEPS</code>&#x8F6E;</li>
+</ul>
+<pre><code>with tf.session() as sess:
+  init_op=tf. global_variables_initializer() 
+  sess_run(init_op)
+  STEPS=3000
+  for i in range(STEPS):
+    start=
+    end=
+    sess.run(train_step, feed_dict:)
+</code></pre><p>&#x4E3E;&#x4F8B;</p>
+<p>&#x968F;&#x673A;&#x4EA7;&#x751F;32&#x7EC4;&#x751F;&#x4EA7;&#x51FA;&#x7684;&#x96F6;&#x4EF6;&#x7684;&#x4F53;&#x79EF;&#x548C;&#x91CD;&#x91CF;&#xFF0C;&#x8BAD;&#x7EC3;3000&#x8F6E;&#xFF0C;&#x6BCF;500&#x8F6E;&#x8F93;&#x51FA;&#x4E00;&#x6B21;&#x635F; &#x5931;&#x51FD;&#x6570;&#x3002;&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x901A;&#x8FC7;&#x6E90;&#x4EE3;&#x7801;&#x8FDB;&#x4E00;&#x6B65;&#x7406;&#x89E3;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x5B9E;&#x73B0;&#x8FC7;&#x7A0B;: </p>
+<p>(0) &#x5BFC;&#x5165;&#x6A21;&#x5757;&#xFF0C;&#x751F;&#x6210;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x96C6;;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#encoding:utf-8</span>
+<span class="hljs-comment">#0 &#x5BFC;&#x5165;&#x6A21;&#x5757;&#xFF0C;&#x751F;&#x6210;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x96C6;</span>
+<span class="hljs-keyword">import</span> tensorflow <span class="hljs-keyword">as</span> tf
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+BATCH_SIZE = <span class="hljs-number">8</span>
+seed = <span class="hljs-number">23455</span>
+
+<span class="hljs-comment"># &#x57FA;&#x4E8E;seed&#x4EA7;&#x751F;&#x968F;&#x673A;&#x6570;</span>
+rng = np.random.RandomState(seed)
+
+<span class="hljs-comment"># &#x968F;&#x673A;&#x6570;&#x8FD4;&#x56DE;32&#x884C;2&#x5217;&#x7684;&#x77E9;&#x9635; &#x8868;&#x793A;32&#x7EC4; &#x4F53;&#x79EF;&#x548C;&#x91CD;&#x91CF; &#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x96C6;</span>
+X = rng.rand(<span class="hljs-number">32</span>,<span class="hljs-number">2</span>)
+
+<span class="hljs-comment"># &#x4ECE;X&#x8FD9;&#x4E2A;32&#x884C;2&#x5217;&#x7684;&#x77E9;&#x9635;&#x4E2D; &#x53D6;&#x51FA;&#x4E00;&#x884C; &#x5224;&#x65AD;&#x5982;&#x679C;&#x548C;&#x5C0F;&#x4E8E;1 &#x7ED9;Y&#x8D4B;&#x503C;1 &#x5982;&#x679C;&#x4E0D;&#x5C0F;&#x4E8E;1 &#x7ED9;Y&#x8D4B;&#x503C;0</span>
+<span class="hljs-comment"># &#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x6570;&#x636E;&#x96C6;&#x7684;&#x6807;&#x7B7E;(&#x6B63;&#x786E;&#x7B54;&#x6848;)</span>
+Y = [[int(x0 + x1 &lt; <span class="hljs-number">1</span>)] <span class="hljs-keyword">for</span> (x0,x1) <span class="hljs-keyword">in</span> X]
+print(<span class="hljs-string">&quot;X:\n&quot;</span>,X)
+print(<span class="hljs-string">&quot;Y:\n&quot;</span>,Y)
+</code></pre>
+<p>(1)&#x5B9A;&#x4E49;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x5165;&#x3001;&#x53C2;&#x6570;&#x548C;&#x8F93;&#x51FA;&#xFF0C;&#x5B9A;&#x4E49;&#x524D;&#x5411;&#x4F20;&#x64AD;&#x8FC7;&#x7A0B;;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#1 &#x5B9A;&#x4E49;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x8F93;&#x5165;&#x3001;&#x53C2;&#x6570;&#x548C;&#x8F93;&#x51FA;&#xFF0C;&#x5B9A;&#x4E49;&#x524D;&#x5411;&#x4F20;&#x64AD;&#x8FC7;&#x7A0B;</span>
+x = tf.placeholder(tf.float32, shape=(<span class="hljs-keyword">None</span>, <span class="hljs-number">2</span>))
+y_ = tf.placeholder(tf.float32, shape=(<span class="hljs-keyword">None</span>, <span class="hljs-number">1</span>))
+
+w1 = tf.Variable(tf.random_normal([<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], stddev=<span class="hljs-number">1</span>, seed=<span class="hljs-number">1</span>))
+w2 = tf.Variable(tf.random_normal([<span class="hljs-number">3</span>,<span class="hljs-number">1</span>], stddev=<span class="hljs-number">1</span>, seed=<span class="hljs-number">1</span>))
+
+a = tf.matmul(x,w1)
+y = tf.matmul(a,w2)
+</code></pre>
+<p>(2)&#x5B9A;&#x4E49;&#x635F;&#x5931;&#x51FD;&#x6570;&#x53CA;&#x53CD;&#x5411;&#x4F20;&#x64AD;&#x65B9;&#x6CD5;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#2 &#x5B9A;&#x4E49;&#x635F;&#x5931;&#x51FD;&#x6570;&#x53CA;&#x65B9;&#x5411;&#x4F20;&#x64AD;&#x65B9;&#x6CD5;</span>
+loss = tf.reduce_mean(tf.square(y-y_))
+train_step = tf.train.GradientDescentOptimizer(<span class="hljs-number">0.01</span>).minimize(loss)
+<span class="hljs-comment">#train_step = tf.train.MomentumOptimizer(0.01,0.9).minimize(loss)</span>
+<span class="hljs-comment">#train_step = tf.train.AdamOptimizer(0.01).minimize(loss)</span>
+</code></pre>
+<p>(3)&#x751F;&#x6210;&#x4F1A;&#x8BDD;&#xFF0C;&#x8BAD;&#x7EC3;<code>STEPS</code>&#x8F6E;</p>
+<pre><code class="lang-python"><span class="hljs-comment">#3 &#x751F;&#x6210;&#x4F1A;&#x8BDD;&#xFF0C;&#x8BAD;&#x7EC3;STEP&#x8F6E;</span>
+<span class="hljs-keyword">with</span> tf.Session() <span class="hljs-keyword">as</span> sess:
+  init_op = tf.global_variables_initializer()
+  sess.run(init_op)
+  <span class="hljs-comment"># &#x8F93;&#x51FA;&#x76EE;&#x524D;(&#x672A;&#x7ECF;&#x8BAD;&#x7EC3;)&#x7684;&#x53C2;&#x6570;&#x53D6;&#x503C;</span>
+  print(<span class="hljs-string">&quot;w1:\n&quot;</span>, sess.run(w1))
+  print(<span class="hljs-string">&quot;w2:\n&quot;</span>, sess.run(w2))
+
+  <span class="hljs-comment"># &#x8BAD;&#x7EC3;&#x6A21;&#x578B;</span>
+  STEPS = <span class="hljs-number">3000</span>
+  <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(STEPS):
+    start = (i*BATCH_SIZE) % <span class="hljs-number">32</span>
+    end = start + BATCH_SIZE
+    sess.run(train_step, feed_dict={x:X[start:end], y_: Y[start:end]})
+    <span class="hljs-keyword">if</span> i % <span class="hljs-number">500</span> == <span class="hljs-number">0</span>:
+      total_loss = sess.run(loss, feed_dict={x:X,y_:Y})
+      print(<span class="hljs-string">&quot;After %d training step(s), loss on all data is %g&quot;</span> % (i, total_loss))
+    <span class="hljs-comment"># &#x8F93;&#x51FA;&#x8BAD;&#x7EC3;&#x540E;&#x7684;&#x53C2;&#x6570;&#x53D6;&#x503C;</span>
+    print(<span class="hljs-string">&quot;\n&quot;</span>)
+    print(<span class="hljs-string">&quot;w1:\n&quot;</span>, sess.run(w1))
+    print(<span class="hljs-string">&quot;w2:\n&quot;</span>, sess.run(w2))
+</code></pre>
+<p>&#x7531;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x5B9E;&#x73B0;&#x7ED3;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x603B;&#x5171;&#x8BAD;&#x7EC3;3000&#x8F6E;&#xFF0C;&#x6BCF;&#x8F6E;&#x4ECE;<code>X</code>&#x7684;&#x6570;&#x636E;&#x96C6;&#x548C;<code>Y</code>&#x7684;&#x6807;&#x7B7E;&#x4E2D;&#x62BD;&#x53D6;&#x76F8;&#x5BF9;&#x5E94;&#x7684;&#x4ECE;<code>start</code>&#x5F00;&#x59CB;&#x5230;<code>end</code>&#x7ED3;&#x675F;&#x4E2A;&#x7279;&#x5F81;&#x503C;&#x548C;&#x6807;&#x7B7E;&#xFF0C;&#x5582;&#x5165;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#xFF0C;&#x7528; <code>sess.run</code>&#x6C42;&#x51FA;<code>loss</code>&#xFF0C;&#x6BCF;500&#x8F6E;&#x6253;&#x5370;&#x4E00;&#x6B21; <code>loss</code>&#x503C;&#x3002;&#x7ECF;&#x8FC7;3000&#x8F6E;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x6253;&#x5370;&#x51FA;&#x6700;&#x7EC8;&#x8BAD;&#x7EC3;&#x597D;&#x7684;&#x53C2;&#x6570;<code>w1</code>&#x3001;<code>w2</code>&#x3002;</p>
+<pre><code>After 0 training step(s), loss on all data is 5.13118
+After 500 training step(s), loss on all data is 0.429111
+After 1000 training step(s), loss on all data is 0.409789
+After 1500 training steps(s), loss on all data is 0.399923
+After 1500 training steps(s), loss on all data is 0.394146
+After 1500 training steps(s), loss on all data is 0.390597
+
+w1:
+[[-0.70006633 0.9136318  0.08953571
+ [-2.3402493 -0.14641267 0.58823055]] 
+w2:
+[[-0.06024267]
+ [ 0.91956168]
+ [-0.0682071 ]]
+</code></pre><p>&#x8FD9;&#x6837;&#x56DB;&#x6B65;&#x5C31;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x642D;&#x5EFA;&#x4E86;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="section1.2.4.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.4 反向传播">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.5 搭建神经网络的步骤","level":"1.2.2.5","depth":3,"previous":{"title":"2.4 反向传播","level":"1.2.2.4","depth":3,"path":"chapter1/section1.2.4.md","ref":"chapter1/section1.2.4.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter1/section1.2.5.md","mtime":"2018-08-09T06:04:29.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-09T06:04:35.904Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
