@@ -1,9 +1,9 @@
 # 基本概念
 
-* 基于 Tensorflow 的 NN:用张量表示数据，用计算图搭建神经网络，用会话执 行计算图，优化线上的权重(参数)，得到模型。
+* 基于`Tensorflow`的**神经网络**：用张量表示数据，用计算图搭建神经网络，用会话执行计算图，优化线上的权重(参数)，得到模型。
 
 
-* 张量:张量就是多维数组(列表)，用`阶`表示张量的维度。
+* **张量**：张量就是多维数组(列表)，用**“阶”**表示张量的维度。
 
 | 维数 | 阶 | 名字 | 例子 |
 | --- | --- | --- | --- |
@@ -14,13 +14,13 @@
 
 张量可以表示0阶到n阶数组(列表)
 
-* 数据类型：`tf.float32` `tf.int32` ...
+* **数据类型**：`tf.float32` `tf.int32` ...
 
 ```python
 import tensorflow as tf
 a = tf.constant([1.0,2.0])
 b = tf.constant([3.0,4.0])
-result = a+b
+result = a + b
 print(result)
 ```
 
@@ -41,16 +41,14 @@ set ts=4    # tab键转成4个空格
 set nu      # 显示行号
 ```
 
-* 计算图(Graph)：搭建神经网络的计算过程，只搭建，不运算。
+* **计算图**(`Graph`)：搭建神经网络的计算过程，只搭建，不运算。
 
 <img src="http://ovhbzkbox.bkt.clouddn.com/2018-07-17-15318034642927.jpg" width="200"/>
 
 ```python
 import tensorflow as tf
-
 x = tf.constant([[1.0,2.0]])
 w = tf.constant([[3.0],[4.0]])
-
 y = tf.matmul(x,w)
 print(y)
 ```
@@ -61,11 +59,11 @@ print(y)
 Tensor("matmul:0",shape(1,1),dtype=float32)
 ```
 
-从这里我们可以看出，print 的结果显示 y 是一个张量，只搭建承载计算过程的 计算图，并没有运算，如果我们想得到运算结果就要用到“会话 Session()”了。
+从这里我们可以看出，`print`的结果显示`y` 是一个张量，只搭建承载计算过程的计算图，并没有运算，如果我们想得到运算结果就要用到“**会话**“`Session()`了。
 
-* 会话(Session):执行计算图中的节点运算。
+* **会话**(`Session`)：执行计算图中的节点运算。
 
-我们用 with 结构实现，语法如下:
+我们用`with`结构实现，语法如下:
 
 ```
 with tf.Session() as sess:
@@ -74,19 +72,16 @@ with tf.Session() as sess:
 
 举例
 
-对于刚刚所述计算图，我们执行 Session()会话可得到矩阵相乘结果:
+对于刚刚所述计算图，我们执行`Session()`会话可得到矩阵相乘结果:
 
 计算`1.0*3.0+2.0*4.0=11.0`
 
 ```python
 import tensorflow as tf
-
 x = tf.constant([[1.0,2.0]])
 w = tf.constant([[3.0],[4.0]])
-
 y = tf.matmul(x,w)
 print(y)
-
 with tf.Session() as sess:
     print(sess.run(y))
 ```

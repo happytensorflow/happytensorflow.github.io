@@ -1,6 +1,6 @@
 # Summary
 
-* [简介](README.md)
+* [*简介*](README.md)
 * [第一章](chapter1/README.md)
     * [第一节 基本概念](chapter1/section1.1.md)
     * [第二节 神经网络的搭建](chapter1/section1.2.md)
